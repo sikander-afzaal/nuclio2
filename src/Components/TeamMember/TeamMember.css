@@ -1,0 +1,38 @@
+.team-box {
+  position: relative;
+  width: 250px;
+  color: black;
+}
+.team-box img {
+  width: 220px;
+  cursor: pointer;
+  object-fit: contain;
+  transition: all 0.5s ease-in-out;
+}
+.team-box span {
+  display: flex;
+}
+.team-box p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 27px;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  transition: all 0.5s ease-in-out;
+  left: 50%;
+  opacity: 0;
+  user-select: none;
+  text-align: center;
+  pointer-events: none;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.team-box:hover > img {
+  opacity: 0.4;
+}
+.team-box:hover > p {
+  opacity: 1;
+}

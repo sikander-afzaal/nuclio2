@@ -1,0 +1,137 @@
+@font-face {
+  font-family: "Chronicle";
+  src: url("/fonts/Chronicle\ Display\ Extra\ Light.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle";
+  src: url("/fonts/Chronicle\ Display\ Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle";
+  src: url("/fonts/Chronicle\ Display\ Roman.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle";
+  src: url("/fonts/Chronicle\ Display\ Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle";
+  src: url("/fonts/Chronicle\ Display\ Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle";
+  src: url("/fonts/Chronicle\ Display\ Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoue UI Regular";
+  src: url("/fonts/segoeui.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoue UI Regular";
+  src: url("/fonts/segoeuisl_1.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoue UI Regular";
+  src: url("/fonts/seguisb_1.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Thet";
+  src: url("/fonts/Theinhardt\ Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Chronicle", "Times New Roman", Times, serif;
+}
+.seg {
+  font-family: "Segoue UI Regular", "Times New Roman", Times, serif;
+}
+.thet {
+  font-family: "Thet", "Times New Roman", Times, serif;
+}
+.cta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 15px 20px;
+  background-color: black;
+  border-radius: 13px;
+  color: white;
+  font-weight: 300;
+  cursor: pointer;
+  border: 2px solid;
+  font-size: 14px;
+  transition: all 0.5s ease-in-out;
+  font-family: "Segoue UI Regular", "Times New Roman", Times, serif;
+}
+
+.cta-btn:hover {
+  color: black;
+  background-color: white;
+  border-color: black;
+  gap: 20px;
+  font-weight: 400;
+}
+/* .cta-btn:hover > svg {
+  margin-right: 10px;
+} */
+.cta-btn svg {
+  font-size: 18px;
+  margin-top: 2px;
+  transition: margin 0.5s ease-in-out;
+}
+.arrow {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  cursor: pointer;
+  object-fit: contain;
+}
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  max-width: 50px;
+  cursor: pointer;
+}
+.back-arrow {
+  font-size: 30px;
+  position: absolute;
+  top: 40px;
+  left: 2%;
+  cursor: pointer;
+  color: black;
+}
+.rotate {
+  transform: rotate(180deg);
+  transform-origin: center;
+  left: calc(50% - 22.5px);
+}
