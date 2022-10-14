@@ -6,7 +6,7 @@ import Team from "./Team";
 import End from "./End";
 import { useEffect } from "react";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
-import { gsap } from "gsap/all";
+import { gsap, Sine } from "gsap/all";
 
 const Landing = () => {
   useEffect(() => {
@@ -48,7 +48,8 @@ const Landing = () => {
         gsap.to(window, {
           scrollTo: { y: section, autoKill: false },
           onComplete: scrolling.enable,
-          duration: 0.8,
+          duration: 0.9,
+          ease: Sine.easeOut,
         });
 
         anim && anim.restart();
