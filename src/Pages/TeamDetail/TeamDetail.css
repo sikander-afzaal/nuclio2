@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  padding-top: 140px;
+  padding-top: 250px;
   min-height: 100vh;
   padding-inline: 20px;
   padding-bottom: 40px;
@@ -13,13 +13,13 @@
 .team-details-box {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   max-width: 1400px;
   width: 100%;
   gap: 100px;
 }
 .team-details-box > img {
-  width: 400px;
+  width: 450px;
   object-fit: contain;
 }
 .right-team-detail {
@@ -56,6 +56,9 @@
   object-fit: contain;
 }
 @media screen and (max-width: 1099px) {
+  .team-details {
+    padding-top: 150px;
+  }
   .team-details-box {
     flex-direction: column;
   }
