@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TeamMember.css";
 
 const TeamMember = ({ name, img, linkedin, openModal, setNameMem }) => {
@@ -20,8 +21,8 @@ const TeamMember = ({ name, img, linkedin, openModal, setNameMem }) => {
       </p>
     </a>
   ) : (
-    <a
-      href="#team"
+    <Link
+      to="/#team4"
       onClick={() => {
         openModal(true);
         setNameMem(name);
@@ -37,7 +38,7 @@ const TeamMember = ({ name, img, linkedin, openModal, setNameMem }) => {
         )}
         {name.split(" ").length > 1 ? name.split(" ")[1] : name}
       </p>
-    </a>
+    </Link>
   );
 };
 
