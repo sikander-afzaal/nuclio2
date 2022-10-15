@@ -58,5 +58,6 @@
     position: static;
     transform: none;
     font-size: 18px;
+    gap: 5px;
   }
 }
