@@ -70,7 +70,6 @@
     margin: 0px !important;
   }
   .smaller {
-    justify-self: flex-start;
     width: 70px;
   }
 }
