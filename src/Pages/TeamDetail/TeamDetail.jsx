@@ -107,24 +107,25 @@ const TeamDetail = ({ close, name }) => {
 
   return (
     <div className="team-details">
-      <button
+      <HiOutlineArrowNarrowLeft
         onClick={() => {
           close(false);
           gsap.to(window, {
             scrollTo: "#team",
           });
         }}
-      >
-        <HiOutlineArrowNarrowLeft className="back-arrow" />
-      </button>
-      <button
+        className="back-arrow"
+      />
+
+      <img
         onClick={() => {
           close(false);
           animationToTop();
         }}
-      >
-        <img src="/logo-black.png" alt="" className="logo" />
-      </button>
+        src="/logo-black.png"
+        alt=""
+        className="logo"
+      />
       <div className="team-details-box">
         <img src={teamMember.img} alt="" />
         <div className="right-team-detail">

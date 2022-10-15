@@ -149,4 +149,7 @@ html {
   .arrow {
     bottom: 5%;
   }
+  .back-arrow {
+    display: none;
+  }
 }

@@ -7,17 +7,20 @@ import "./styles/Team.css";
 const Team = ({ close }) => {
   return (
     <div className="team-page">
-      <button onClick={() => close(false)}>
-        <HiOutlineArrowNarrowLeft className="back-arrow" />
-      </button>
-      <button
+      <HiOutlineArrowNarrowLeft
+        onClick={() => close(false)}
+        className="back-arrow"
+      />
+
+      <img
         onClick={() => {
           close(false);
           animationToTop();
         }}
-      >
-        <img src="/logo-black.png" alt="" className="logo" />
-      </button>
+        src="/logo-black.png"
+        alt=""
+        className="logo"
+      />
 
       <h1 className="thet">
         <span className="thet">The</span> Nuclio Team

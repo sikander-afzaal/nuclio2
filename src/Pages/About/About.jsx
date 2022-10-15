@@ -5,17 +5,20 @@ import { animationToTop } from "../Landing/anim";
 const About = ({ close }) => {
   return (
     <div className="about-page">
-      <button onClick={() => close(false)}>
-        <HiOutlineArrowNarrowLeft className="back-arrow" />
-      </button>
-      <button
+      <HiOutlineArrowNarrowLeft
+        onClick={() => close(false)}
+        className="back-arrow"
+      />
+
+      <img
         onClick={() => {
           close(false);
           animationToTop();
         }}
-      >
-        <img src="/logo-black.png" alt="" className="logo" />
-      </button>
+        src="/logo-black.png"
+        alt=""
+        className="logo"
+      />
       <div className="about-box">
         <div className="blur"></div>
         <img src="/about.png" alt="" />
