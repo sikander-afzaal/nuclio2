@@ -58,8 +58,8 @@ export const animationToTop = () => {
     document.querySelectorAll(".scroll-section").forEach((section, i) => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top 98%",
-        end: "bottom 2%",
+        start: "top 99.5%",
+        end: "bottom 5%",
         onEnter: () => goToSection(section),
         onEnterBack: () => goToSection(section),
       });
