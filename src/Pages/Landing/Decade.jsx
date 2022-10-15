@@ -41,7 +41,7 @@ const Decade = () => {
           <strong>successful</strong> startups
         </p>
         <a
-          href="#decade"
+          href="#About nuclio"
           onClick={() => setOpenAbout(true)}
           className="cta-btn"
         >

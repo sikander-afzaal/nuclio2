@@ -42,7 +42,11 @@ const About = () => {
           Building <strong>iconic</strong> web3 startups <br /> that{" "}
           <strong>shape our future</strong>
         </p>
-        <a href="#about" onClick={() => setOpenAbout(true)} className="cta-btn">
+        <a
+          href="#About nuclio labs"
+          onClick={() => setOpenAbout(true)}
+          className="cta-btn"
+        >
           <BsArrowRight /> About Nuclio Labs
         </a>
       </div>
