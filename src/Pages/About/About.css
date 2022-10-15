@@ -62,9 +62,11 @@
     transform: translateY(-50%);
     background-color: rgba(255, 255, 255, 1);
   }
-  .about-page,
-  .change {
+  .about-page {
     padding-bottom: 100px;
+  }
+  .change {
+    padding-bottom: 130px;
   }
   .about-box {
     flex-direction: column;
