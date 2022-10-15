@@ -18,7 +18,6 @@ const About = () => {
     }
   }, [openAbout]);
   useEffect(() => {
-    console.log(location);
     if (hash === "") {
       gsap.to("body", { overflow: "auto" });
       setOpenAbout(false);

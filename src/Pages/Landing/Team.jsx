@@ -22,17 +22,14 @@ const Team = () => {
       gsap.to("body", { overflow: "auto" });
     }
   }, [openAbout, openModal]);
-  // useEffect(() => {
-  //   if (openModal) {
-  //     gsap.to("body", { overflow: "hidden" });
-  //   } else {
-  //     gsap.to("body", { overflow: "auto" });
-  //   }
-  // }, [openModal]);
+
   useEffect(() => {
     if (hash === "") {
       gsap.to("body", { overflow: "auto" });
       setOpenAbout(false);
+      gsap.to(window, {
+        scrollTo: "#team",
+      });
     } else {
       gsap.to("body", { overflow: "hidden" });
     }

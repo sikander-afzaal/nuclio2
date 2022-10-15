@@ -114,11 +114,7 @@ const TeamDetail = ({ close, name }) => {
       gsap.to(window, {
         scrollTo: "#team",
       });
-    } else {
-      gsap.to(window, {
-        scrollTo: "#team",
-      });
-    }
+    } else return;
   }, [hash]);
   return (
     <div className="team-details">
