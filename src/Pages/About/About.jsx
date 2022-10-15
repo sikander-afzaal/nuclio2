@@ -1,6 +1,6 @@
 import "./About.css";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { animationToTop } from "../Landing/anim";
 
 const About = ({ close }) => {
   return (

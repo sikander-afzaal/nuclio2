@@ -1,6 +1,7 @@
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import TeamMember from "../../Components/TeamMember/TeamMember";
+import { animationToTop } from "../Landing/anim";
 import "./styles/Team.css";
 
 const Team = ({ close }) => {
