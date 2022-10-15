@@ -76,7 +76,7 @@
     gap: 0px;
     width: 100%;
     position: relative;
-    height: 850px;
+    height: max-content;
   }
   .text-about {
     width: 100%;

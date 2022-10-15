@@ -15,7 +15,7 @@
     width: 100%;
     position: relative;
     justify-content: flex-start;
-    height: 950px;
+    height: max-content;
   }
   .change-box {
     margin: 0px;
@@ -48,7 +48,7 @@
     font-size: 35px;
   }
   .change .about-box {
-    height: 900px;
+    height: max-content;
   }
   .change .text-about {
     margin-top: -20px;
