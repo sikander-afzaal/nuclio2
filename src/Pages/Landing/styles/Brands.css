@@ -69,4 +69,8 @@
     width: 120px;
     margin: 0px !important;
   }
+  .smaller {
+    justify-self: center;
+    width: 70px;
+  }
 }

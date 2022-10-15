@@ -13,6 +13,7 @@
   cursor: pointer;
   object-fit: contain;
   transition: all 0.5s ease-in-out;
+  pointer-events: none;
 }
 .team-box span {
   display: flex;
@@ -23,6 +24,7 @@
   align-items: center;
   gap: 10px;
   font-size: 27px;
+  pointer-events: none;
   font-weight: 600;
   position: absolute;
   top: 50%;
@@ -40,4 +42,21 @@
 }
 .team-box:hover > p {
   opacity: 1;
+}
+@media screen and (max-width: 700px) {
+  .team-box {
+    width: 170px;
+    text-decoration: none;
+    flex-direction: column;
+  }
+  .team-box img {
+    width: 80%;
+  }
+  .team-box p {
+    opacity: 1;
+    text-decoration: none;
+    position: static;
+    transform: none;
+    font-size: 18px;
+  }
 }

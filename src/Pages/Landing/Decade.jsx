@@ -19,10 +19,10 @@ const Decade = () => {
   }, [openAbout]);
   useEffect(() => {
     if (hash === "") {
-      gsap.to("body", { overflow: "auto" });
+      // gsap.to("body", { overflow: "auto" });
       setOpenAbout(false);
     } else {
-      gsap.to("body", { overflow: "hidden" });
+      // gsap.to("body", { overflow: "hidden" });
     }
   }, [hash]);
   return (

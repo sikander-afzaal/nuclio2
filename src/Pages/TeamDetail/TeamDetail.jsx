@@ -99,7 +99,7 @@ const TeamDetail = ({ close, name }) => {
   ];
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     MemberData.forEach((elem) => {
       if (elem.name === name) {
         setTeamMember(elem);
@@ -107,13 +107,12 @@ const TeamDetail = ({ close, name }) => {
     });
   }, [name]);
   useEffect(() => {
-    gsap.registerPlugin(ScrollToPlugin);
     if (hash === "") {
-      gsap.to("body", { overflow: "auto" });
+      // gsap.to("body", { overflow: "auto" });
       close(false);
-      gsap.to(window, {
-        scrollTo: "#team",
-      });
+      // gsap.to(window, {
+      //   scrollTo: "#team",
+      // });
     } else return;
   }, [hash]);
   return (

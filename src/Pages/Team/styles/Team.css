@@ -37,11 +37,17 @@
 
 @media screen and (max-width: 913px) {
   .team-grid {
+    display: grid;
+    place-items: center;
     grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .team-grid .team-box:last-of-type {
+    grid-column: 1/3;
   }
 }
-@media screen and (max-width: 590px) {
+/* @media screen and (max-width: 700p) {
   .team-grid {
     grid-template-columns: 1fr;
   }
-}
+} */

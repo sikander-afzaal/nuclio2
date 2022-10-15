@@ -10,7 +10,6 @@ import TeamPage from "../Team/Team";
 import TeamDetail from "../TeamDetail/TeamDetail";
 
 const Team = () => {
-  gsap.registerPlugin(ScrollToPlugin);
   const [openAbout, setOpenAbout] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [nameMem, setNameMem] = useState("");
@@ -22,15 +21,16 @@ const Team = () => {
       gsap.to("body", { overflow: "auto" });
     }
   }, [openAbout, openModal]);
-
   useEffect(() => {
     if (hash === "") {
-      gsap.to("body", { overflow: "auto" });
+      // gsap.to("body", { overflow: "auto" });
       setOpenAbout(false);
+      setOpenModal(false);
     } else {
-      gsap.to("body", { overflow: "hidden" });
+      return;
     }
   }, [hash]);
+
   return (
     <div id="team" className="team scroll-section">
       {openModal && <TeamDetail name={nameMem} close={setOpenModal} />}

@@ -44,3 +44,17 @@
     margin-top: 20px;
   }
 }
+@media screen and (max-width: 700px) {
+  .team {
+    padding-top: 162px;
+  }
+  .team-row {
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .team-row .team-box:last-of-type {
+    grid-column: 1/3;
+  }
+}
