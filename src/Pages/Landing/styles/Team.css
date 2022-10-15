@@ -1,7 +1,6 @@
 .team {
   width: 100%;
   min-height: 100vh;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,6 +29,8 @@
 }
 @media screen and (max-width: 990px) {
   .team {
+    min-height: 100vh;
+    height: auto;
     padding: 100px 20px;
     justify-content: flex-start;
   }

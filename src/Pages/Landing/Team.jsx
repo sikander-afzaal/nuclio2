@@ -7,19 +7,24 @@ import { ScrollToPlugin } from "gsap/all";
 import { animationToTop } from "./anim";
 import { useEffect, useState } from "react";
 import TeamPage from "../Team/Team";
+import TeamDetail from "../TeamDetail/TeamDetail";
 
 const Team = () => {
   gsap.registerPlugin(ScrollToPlugin);
   const [openAbout, setOpenAbout] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [nameMem, setNameMem] = useState("");
+
   useEffect(() => {
-    if (openAbout) {
+    if (openAbout || openModal) {
       gsap.to("body", { overflow: "hidden" });
     } else {
       gsap.to("body", { overflow: "auto" });
     }
-  }, [openAbout]);
+  }, [openAbout, openModal]);
   return (
     <div id="team" className="team scroll-section">
+      {openModal && <TeamDetail name={nameMem} close={setOpenModal} />}
       {openAbout && <TeamPage close={setOpenAbout} />}
       <img
         onClick={() => animationToTop()}
@@ -32,9 +37,24 @@ const Team = () => {
         <span className="thet">The</span> Partners
       </h1>
       <div className="team-row">
-        <TeamMember img={"/team/team (3).png"} name="Ernest Sanchez" />
-        <TeamMember img={"/team/team (1).png"} name="Martin Caride" />
-        <TeamMember img={"/team/team (2).png"} name="Pedro Cadena" />
+        <TeamMember
+          openModal={setOpenModal}
+          img={"/team/team (3).png"}
+          name="Ernest Sanchez"
+          setNameMem={setNameMem}
+        />
+        <TeamMember
+          openModal={setOpenModal}
+          img={"/team/team (1).png"}
+          name="Martin Caride"
+          setNameMem={setNameMem}
+        />
+        <TeamMember
+          openModal={setOpenModal}
+          img={"/team/team (2).png"}
+          name="Pedro Cadena"
+          setNameMem={setNameMem}
+        />
       </div>
       <button
         onClick={() => {

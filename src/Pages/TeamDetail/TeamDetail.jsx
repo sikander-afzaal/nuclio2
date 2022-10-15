@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { Link, useParams } from "react-router-dom";
+import { animationToTop } from "../Landing/anim";
 import "./TeamDetail.css";
 
-const TeamDetail = () => {
+const TeamDetail = ({ close, name }) => {
   const [teamMember, setTeamMember] = useState({
     name: "Earnest Sanchez",
     img: "/team/team (10).png",
@@ -15,7 +16,6 @@ const TeamDetail = () => {
     linkedin: "carlosblanco",
     url: "",
   });
-  const { name } = useParams();
   const MemberData = [
     {
       name: "Ernest Sanchez",
@@ -105,12 +105,17 @@ const TeamDetail = () => {
 
   return (
     <div className="team-details">
-      <Link to="/">
+      <button onClick={() => close(false)}>
         <HiOutlineArrowNarrowLeft className="back-arrow" />
-      </Link>
-      <Link to={"/"}>
+      </button>
+      <button
+        onClick={() => {
+          close(false);
+          animationToTop();
+        }}
+      >
         <img src="/logo-black.png" alt="" className="logo" />
-      </Link>
+      </button>
       <div className="team-details-box">
         <img src={teamMember.img} alt="" />
         <div className="right-team-detail">

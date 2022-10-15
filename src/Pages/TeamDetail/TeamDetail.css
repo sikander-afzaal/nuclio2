@@ -1,16 +1,19 @@
 .team-details {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
+  justify-content: center;
+  align-items: flex-start;
   padding-inline: 20px;
   padding-bottom: 40px;
   padding-top: 170px;
   max-height: 100vh;
   overflow-y: auto;
   min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 66;
+  background-color: white;
 }
 .team-details-box {
   display: flex;

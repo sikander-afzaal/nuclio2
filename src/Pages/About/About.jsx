@@ -8,7 +8,12 @@ const About = ({ close }) => {
       <button onClick={() => close(false)}>
         <HiOutlineArrowNarrowLeft className="back-arrow" />
       </button>
-      <button onClick={() => close(false)}>
+      <button
+        onClick={() => {
+          close(false);
+          animationToTop();
+        }}
+      >
         <img src="/logo-black.png" alt="" className="logo" />
       </button>
       <div className="about-box">

@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
 import "./TeamMember.css";
 
-const TeamMember = ({ name, img, linkedin }) => {
+const TeamMember = ({ name, img, linkedin, openModal, setNameMem }) => {
   return linkedin ? (
     <a href={linkedin} target={"blank"} className="team-box">
       <img src={img} alt="" />
@@ -21,7 +20,13 @@ const TeamMember = ({ name, img, linkedin }) => {
       </p>
     </a>
   ) : (
-    <Link to={`/${name}`} className="team-box">
+    <button
+      onClick={() => {
+        openModal(true);
+        setNameMem(name);
+      }}
+      className="team-box"
+    >
       <img src={img} alt="" />
       <p>
         {name.split(" ").length > 1 ? (
@@ -31,7 +36,7 @@ const TeamMember = ({ name, img, linkedin }) => {
         )}
         {name.split(" ").length > 1 ? name.split(" ")[1] : name}
       </p>
-    </Link>
+    </button>
   );
 };
 

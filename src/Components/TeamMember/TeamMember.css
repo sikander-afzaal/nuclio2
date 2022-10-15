@@ -2,6 +2,8 @@
   position: relative;
   width: 250px;
   color: black;
+  background-color: transparent;
+  border: none;
 }
 .team-box img {
   width: 220px;
