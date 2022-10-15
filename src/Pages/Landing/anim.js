@@ -17,6 +17,7 @@ export const animationToTop = () => {
       disable() {
         if (scrolling.enabled) {
           scrolling.enabled = false;
+          gsap.to("body", { overflow: "hidden" });
           window.addEventListener("scroll", gsap.ticker.tick, {
             passive: true,
           });
@@ -30,6 +31,7 @@ export const animationToTop = () => {
       enable() {
         if (!scrolling.enabled) {
           scrolling.enabled = true;
+          gsap.to("body", { overflow: "auto" });
           window.removeEventListener("scroll", gsap.ticker.tick);
           scrolling.events.forEach((e, i) =>
             (i ? document : window).removeEventListener(e, scrolling.prevent)
