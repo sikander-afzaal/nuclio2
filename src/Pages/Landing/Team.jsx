@@ -27,9 +27,6 @@ const Team = () => {
     if (hash === "") {
       gsap.to("body", { overflow: "auto" });
       setOpenAbout(false);
-      gsap.to(window, {
-        scrollTo: "#team",
-      });
     } else {
       gsap.to("body", { overflow: "hidden" });
     }
