@@ -32,7 +32,11 @@ const End = () => {
             info@nucliolabs.com{" "}
           </a>
           <span></span>
-          <a className="seg" href="#">
+          <a
+            className="seg"
+            target={"blank"}
+            href="https://twitter.com/nucliolabs"
+          >
             @nucliolabs
           </a>
         </div>
