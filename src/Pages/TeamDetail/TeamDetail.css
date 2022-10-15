@@ -63,6 +63,7 @@
 @media screen and (max-width: 1099px) {
   .team-details {
     padding-top: 150px;
+    padding-bottom: 80px;
   }
   .team-details-box {
     flex-direction: column;
