@@ -35,10 +35,23 @@
 }
 
 @media screen and (max-width: 800px) {
-  .about br {
+  .about br,
+  .decade br {
     display: none;
   }
   .about .text p {
     font-size: 38px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .about .text p,
+  .decade .text p {
+    font-size: 29px;
+  }
+}
+@media screen and (max-width: 410px) {
+  .about .text p,
+  .decade .text p {
+    font-size: 26px;
   }
 }

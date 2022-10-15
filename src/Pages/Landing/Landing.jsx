@@ -8,10 +8,11 @@ import { useEffect } from "react";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { gsap, Sine } from "gsap/all";
 
-const Landing = () => {
+const Landing = ({ prevLocation }) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
+
     const scrolling = {
       enabled: true,
       events: "scroll,wheel,touchmove,pointermove".split(","),

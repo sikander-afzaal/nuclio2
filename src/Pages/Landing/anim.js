@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
+import { ScrollToPlugin, ScrollTrigger, Sine } from "gsap/all";
 
 export const animationToTop = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -47,6 +47,7 @@ export const animationToTop = () => {
           scrollTo: { y: section, autoKill: false },
           onComplete: scrolling.enable,
           duration: 0.8,
+          ease: Sine.easeOut,
         });
 
         anim && anim.restart();
