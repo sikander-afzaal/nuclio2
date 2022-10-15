@@ -1,9 +1,15 @@
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/all";
+import { useEffect } from "react";
 import "./styles/Hero.css";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollToPlugin);
+  useEffect(() => {
+    document.querySelector(".mobile-vid").play();
+    document.querySelector(".desktop-vid").play();
+  }, []);
+
   return (
     <div id="hero" className="hero scroll-section">
       <video
