@@ -41,6 +41,7 @@
     place-items: center;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    padding-bottom: 60px;
   }
   .team-grid .team-box:last-of-type {
     grid-column: 1/3;
