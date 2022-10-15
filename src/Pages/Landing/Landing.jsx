@@ -61,7 +61,7 @@ const Landing = ({ prevLocation }) => {
       ScrollTrigger.create({
         trigger: section,
         start: "top 95%",
-        end: "bottom top+=1",
+        end: "bottom 5%",
         onEnter: () => goToSection(section),
         onEnterBack: () => goToSection(section),
       });
