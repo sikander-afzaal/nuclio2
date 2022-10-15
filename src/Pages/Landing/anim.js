@@ -66,5 +66,5 @@ export const animationToTop = () => {
     // ScrollTrigger.create({
     //   trigger: panel,
     //   start: "bottom bottom",
-  }, 700);
+  }, 500);
 };
