@@ -1,13 +1,13 @@
+import "./TeamDetail.css";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { animationToTop } from "../Landing/anim";
-import "./TeamDetail.css";
 import { ScrollToPlugin } from "gsap/all";
 import { useLocation } from "react-router-dom";
 
 const TeamDetail = ({ close, name }) => {
-  const { hash } = useLocation();
+  const { hash } = useLocation(); //to get the location of the opened page
   const [teamMember, setTeamMember] = useState({
     name: "Earnest Sanchez",
     img: "/team/team (10).png",
@@ -18,7 +18,7 @@ const TeamDetail = ({ close, name }) => {
     ],
     linkedin: "carlosblanco",
     url: "",
-  });
+  }); // the team member that needs to be shown
   const MemberData = [
     {
       name: "Ernest Sanchez",
@@ -52,51 +52,7 @@ const TeamDetail = ({ close, name }) => {
       linkedin: "pedrocadena",
       url: "https://www.linkedin.com/in/pedro-c-64217517a/",
     },
-    // {
-    //   name: "Carlos Blanco",
-    //   img: "/team/team (8).png",
-    //   desc: [
-    //     "Best entrepreneur and Business Angel of 2014 in Spain.Founder of Akamon Entertainment, Conector Startup Accelerator, Encomenda Smart Capital and First Tuesday.",
-    //     "Managing Partner and Cofounder of Encomenda Smart Capital and Investor in 100+ start-ups.",
-    //     "PADE IESE Business School.",
-    //   ],
-    //   linkedin: "carlosblanco",
-    //   url: "",
-    // },
-    // {
-    //   name: "Eli",
-    //   img: "/team/team (9).png",
-    //   desc: [
-    //     "Best entrepreneur and Business Angel of 2014 in Spain.Founder of Akamon Entertainment, Conector Startup Accelerator, Encomenda Smart Capital and First Tuesday.",
-    //     "Managing Partner and Cofounder of Encomenda Smart Capital and Investor in 100+ start-ups.",
-    //     "PADE IESE Business School.",
-    //   ],
-    //   linkedin: "carlosblanco",
-    //   url: "",
-    // },
-    // {
-    //   name: "Maria Rosa",
-    //   img: "/team/team (11).png",
-    //   desc: [
-    //     "Best entrepreneur and Business Angel of 2014 in Spain.Founder of Akamon Entertainment, Conector Startup Accelerator, Encomenda Smart Capital and First Tuesday.",
-    //     "Managing Partner and Cofounder of Encomenda Smart Capital and Investor in 100+ start-ups.",
-    //     "PADE IESE Business School.",
-    //   ],
-    //   linkedin: "carlosblanco",
-    //   url: "",
-    // },
-    // {
-    //   name: "Quim",
-    //   img: "/team/team (14).png",
-    //   desc: [
-    //     "Best entrepreneur and Business Angel of 2014 in Spain.Founder of Akamon Entertainment, Conector Startup Accelerator, Encomenda Smart Capital and First Tuesday.",
-    //     "Managing Partner and Cofounder of Encomenda Smart Capital and Investor in 100+ start-ups.",
-    //     "PADE IESE Business School.",
-    //   ],
-    //   linkedin: "carlosblanco",
-    //   url: "",
-    // },
-  ];
+  ]; // all team members details
   useEffect(() => {
     gsap.registerPlugin(ScrollToPlugin);
     // window.scrollTo(0, 0);
@@ -108,11 +64,7 @@ const TeamDetail = ({ close, name }) => {
   }, [name]);
   useEffect(() => {
     if (hash === "") {
-      // gsap.to("body", { overflow: "auto" });
       close(false);
-      // gsap.to(window, {
-      //   scrollTo: "#team",
-      // });
     } else return;
   }, [hash]);
   return (
