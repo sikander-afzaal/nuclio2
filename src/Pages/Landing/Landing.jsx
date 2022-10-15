@@ -60,8 +60,8 @@ const Landing = ({ prevLocation }) => {
     document.querySelectorAll(".scroll-section").forEach((section, i) => {
       ScrollTrigger.create({
         trigger: section,
-        start: "top 95%",
-        end: "bottom 5%",
+        start: "top 98%",
+        end: "bottom 2%",
         onEnter: () => goToSection(section),
         onEnterBack: () => goToSection(section),
       });
