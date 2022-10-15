@@ -15,7 +15,6 @@
     width: 100%;
     position: relative;
     justify-content: flex-start;
-    height: max-content;
   }
   .change-box {
     margin: 0px;
@@ -26,9 +25,13 @@
     position: relative;
     z-index: 2;
   }
-
+  .change .logo {
+    position: static;
+    transform: none;
+  }
   .change {
     padding-bottom: 90px;
+    align-items: center;
   }
   .change .blur {
     display: block;
@@ -47,9 +50,7 @@
   .change .text-about h1 {
     font-size: 35px;
   }
-  .change .about-box {
-    height: max-content;
-  }
+
   .change .text-about {
     margin-top: -20px;
   }

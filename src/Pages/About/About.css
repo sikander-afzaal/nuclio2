@@ -64,7 +64,11 @@
   }
   .about-page {
     padding-bottom: 90px;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 30px;
   }
   .change {
     padding-bottom: 130px;
@@ -76,7 +80,10 @@
     gap: 0px;
     width: 100%;
     position: relative;
-    height: max-content;
+  }
+  .about-page .logo {
+    position: static;
+    transform: none;
   }
   .text-about {
     width: 100%;
