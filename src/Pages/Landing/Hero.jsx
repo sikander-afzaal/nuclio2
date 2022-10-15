@@ -6,8 +6,9 @@ import "./styles/Hero.css";
 const Hero = () => {
   gsap.registerPlugin(ScrollToPlugin);
   useEffect(() => {
-    document.querySelector(".mobile-vid").play();
-    document.querySelector(".desktop-vid").play();
+    window.addEventListener("scroll", () => {
+      document.querySelector(".mobile-vid").play();
+    });
   }, []);
 
   return (
