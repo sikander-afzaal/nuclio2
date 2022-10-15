@@ -1,12 +1,17 @@
 .about-page {
   background-color: white;
   width: 100%;
+  max-height: 100vh;
+  overflow-y: auto;
   min-height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-inline: 20px;
+  z-index: 66;
 }
 .about-box {
   display: flex;

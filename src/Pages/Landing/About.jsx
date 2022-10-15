@@ -4,11 +4,23 @@ import { BsArrowRight } from "react-icons/bs";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/all";
 import { animationToTop } from "./anim";
+import { useEffect, useState } from "react";
+import AboutPage from "../About/About";
 
 const About = () => {
+  const [openAbout, setOpenAbout] = useState(false);
+  useEffect(() => {
+    if (openAbout) {
+      gsap.to("body", { overflow: "hidden" });
+    } else {
+      gsap.to("body", { overflow: "auto" });
+    }
+  }, [openAbout]);
+
   gsap.registerPlugin(ScrollToPlugin);
   return (
     <div id="about" className="about scroll-section">
+      {openAbout && <AboutPage close={setOpenAbout} />}
       <img
         onClick={() => animationToTop()}
         src="/logo-black.png"
@@ -21,9 +33,9 @@ const About = () => {
           Building <strong>iconic</strong> web3 startups <br /> that{" "}
           <strong>shape our future</strong>
         </p>
-        <Link to="/about" className="cta-btn">
+        <button onClick={() => setOpenAbout(true)} className="cta-btn">
           <BsArrowRight /> About Nuclio Labs
-        </Link>
+        </button>
       </div>
       <img
         onClick={() => {

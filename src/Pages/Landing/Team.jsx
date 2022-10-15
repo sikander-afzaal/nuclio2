@@ -5,11 +5,22 @@ import TeamMember from "../../Components/TeamMember/TeamMember";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/all";
 import { animationToTop } from "./anim";
+import { useEffect, useState } from "react";
+import TeamPage from "../Team/Team";
 
 const Team = () => {
   gsap.registerPlugin(ScrollToPlugin);
+  const [openAbout, setOpenAbout] = useState(false);
+  useEffect(() => {
+    if (openAbout) {
+      gsap.to("body", { overflow: "hidden" });
+    } else {
+      gsap.to("body", { overflow: "auto" });
+    }
+  }, [openAbout]);
   return (
     <div id="team" className="team scroll-section">
+      {openAbout && <TeamPage close={setOpenAbout} />}
       <img
         onClick={() => animationToTop()}
         src="/logo-black.png"
@@ -25,9 +36,14 @@ const Team = () => {
         <TeamMember img={"/team/team (1).png"} name="Martin Caride" />
         <TeamMember img={"/team/team (2).png"} name="Pedro Cadena" />
       </div>
-      <Link to="/team" className="cta-btn">
+      <button
+        onClick={() => {
+          setOpenAbout(true);
+        }}
+        className="cta-btn"
+      >
         <BsArrowRight /> Nuclio Team
-      </Link>
+      </button>
       <img
         onClick={() => {
           gsap.to(window, {

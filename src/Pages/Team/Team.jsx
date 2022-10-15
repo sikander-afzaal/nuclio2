@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import TeamMember from "../../Components/TeamMember/TeamMember";
 import "./styles/Team.css";
 
-const Team = () => {
+const Team = ({ close }) => {
   return (
     <div className="team-page">
-      <Link to="/">
+      <button onClick={() => close(false)}>
         <HiOutlineArrowNarrowLeft className="back-arrow" />
-      </Link>
-      <Link to={"/"}>
+      </button>
+      <button onClick={() => close(false)}>
         <img src="/logo-black.png" alt="" className="logo" />
-      </Link>
+      </button>
 
       <h1 className="thet">
         <span className="thet">The</span> Nuclio Team

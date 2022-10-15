@@ -2,15 +2,15 @@ import "./About.css";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-const About = () => {
+const About = ({ close }) => {
   return (
     <div className="about-page">
-      <Link to="/">
+      <button onClick={() => close(false)}>
         <HiOutlineArrowNarrowLeft className="back-arrow" />
-      </Link>
-      <Link to={"/"}>
+      </button>
+      <button onClick={() => close(false)}>
         <img src="/logo-black.png" alt="" className="logo" />
-      </Link>
+      </button>
       <div className="about-box">
         <div className="blur"></div>
         <img src="/about.png" alt="" />

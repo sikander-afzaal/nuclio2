@@ -5,6 +5,7 @@
   flex-direction: column;
   width: 100%;
   min-height: 700px;
+  height: 100vh;
   position: relative;
   background-color: black;
 }
