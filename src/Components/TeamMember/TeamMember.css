@@ -4,6 +4,9 @@
   color: black;
   background-color: transparent;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .team-box img {
   width: 220px;

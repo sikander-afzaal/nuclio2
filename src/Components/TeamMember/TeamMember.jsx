@@ -20,10 +20,12 @@ const TeamMember = ({ name, img, linkedin, openModal, setNameMem }) => {
       </p>
     </a>
   ) : (
-    <button
+    <div
       onClick={() => {
         openModal(true);
         setNameMem(name);
+        // gsap.registerPlugin(ScrollTrigger);
+        // ScrollTrigger.getAll().forEach((st) => st.kill());
       }}
       className="team-box"
     >
@@ -36,7 +38,7 @@ const TeamMember = ({ name, img, linkedin, openModal, setNameMem }) => {
         )}
         {name.split(" ").length > 1 ? name.split(" ")[1] : name}
       </p>
-    </button>
+    </div>
   );
 };
 

@@ -16,12 +16,19 @@ const Team = () => {
   const [nameMem, setNameMem] = useState("");
 
   useEffect(() => {
-    if (openAbout || openModal) {
+    if (openAbout) {
       gsap.to("body", { overflow: "hidden" });
     } else {
       gsap.to("body", { overflow: "auto" });
     }
-  }, [openAbout, openModal]);
+  }, [openAbout]);
+  useEffect(() => {
+    if (openModal) {
+      gsap.to("body", { overflow: "hidden" });
+    } else {
+      gsap.to("body", { overflow: "auto" });
+    }
+  }, [openModal]);
   return (
     <div id="team" className="team scroll-section">
       {openModal && <TeamDetail name={nameMem} close={setOpenModal} />}

@@ -1,8 +1,9 @@
+import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
-import { Link, useParams } from "react-router-dom";
 import { animationToTop } from "../Landing/anim";
 import "./TeamDetail.css";
+import { ScrollToPlugin } from "gsap/all";
 
 const TeamDetail = ({ close, name }) => {
   const [teamMember, setTeamMember] = useState({
@@ -95,6 +96,7 @@ const TeamDetail = ({ close, name }) => {
     // },
   ];
   useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
     window.scrollTo(0, 0);
     MemberData.forEach((elem) => {
       if (elem.name === name) {
@@ -105,7 +107,14 @@ const TeamDetail = ({ close, name }) => {
 
   return (
     <div className="team-details">
-      <button onClick={() => close(false)}>
+      <button
+        onClick={() => {
+          close(false);
+          gsap.to(window, {
+            scrollTo: "#team",
+          });
+        }}
+      >
         <HiOutlineArrowNarrowLeft className="back-arrow" />
       </button>
       <button
