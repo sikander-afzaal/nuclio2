@@ -1,6 +1,6 @@
 import "./styles/Team.css";
 import { BsArrowRight } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import TeamMember from "../../Components/TeamMember/TeamMember";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/all";
@@ -14,21 +14,29 @@ const Team = () => {
   const [openAbout, setOpenAbout] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [nameMem, setNameMem] = useState("");
-
+  const { hash } = useLocation();
   useEffect(() => {
-    if (openAbout) {
+    if (openAbout || openModal) {
       gsap.to("body", { overflow: "hidden" });
     } else {
       gsap.to("body", { overflow: "auto" });
     }
-  }, [openAbout]);
+  }, [openAbout, openModal]);
+  // useEffect(() => {
+  //   if (openModal) {
+  //     gsap.to("body", { overflow: "hidden" });
+  //   } else {
+  //     gsap.to("body", { overflow: "auto" });
+  //   }
+  // }, [openModal]);
   useEffect(() => {
-    if (openModal) {
-      gsap.to("body", { overflow: "hidden" });
-    } else {
+    if (hash === "") {
       gsap.to("body", { overflow: "auto" });
+      setOpenAbout(false);
+    } else {
+      gsap.to("body", { overflow: "hidden" });
     }
-  }, [openModal]);
+  }, [hash]);
   return (
     <div id="team" className="team scroll-section">
       {openModal && <TeamDetail name={nameMem} close={setOpenModal} />}
@@ -63,14 +71,15 @@ const Team = () => {
           setNameMem={setNameMem}
         />
       </div>
-      <button
+      <a
+        href="#team"
         onClick={() => {
           setOpenAbout(true);
         }}
         className="cta-btn"
       >
         <BsArrowRight /> Nuclio Team
-      </button>
+      </a>
       <img
         onClick={() => {
           gsap.to(window, {

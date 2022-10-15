@@ -4,8 +4,10 @@ import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { animationToTop } from "../Landing/anim";
 import "./TeamDetail.css";
 import { ScrollToPlugin } from "gsap/all";
+import { useLocation } from "react-router-dom";
 
 const TeamDetail = ({ close, name }) => {
+  const { hash } = useLocation();
   const [teamMember, setTeamMember] = useState({
     name: "Earnest Sanchez",
     img: "/team/team (10).png",
@@ -104,7 +106,15 @@ const TeamDetail = ({ close, name }) => {
       }
     });
   }, [name]);
-
+  useEffect(() => {
+    if (hash === "") {
+      gsap.to("body", { overflow: "auto" });
+      close(false);
+      gsap.to(window, {
+        scrollTo: "#team",
+      });
+    } else return;
+  }, [hash]);
   return (
     <div className="team-details">
       <HiOutlineArrowNarrowLeft

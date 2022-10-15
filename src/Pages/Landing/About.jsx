@@ -1,13 +1,14 @@
 import "./styles/About.css";
-import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/all";
 import { animationToTop } from "./anim";
 import { useEffect, useState } from "react";
 import AboutPage from "../About/About";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
+  const { hash } = useLocation();
   const [openAbout, setOpenAbout] = useState(false);
   useEffect(() => {
     if (openAbout) {
@@ -16,6 +17,15 @@ const About = () => {
       gsap.to("body", { overflow: "auto" });
     }
   }, [openAbout]);
+  useEffect(() => {
+    console.log(location);
+    if (hash === "") {
+      gsap.to("body", { overflow: "auto" });
+      setOpenAbout(false);
+    } else {
+      gsap.to("body", { overflow: "hidden" });
+    }
+  }, [hash]);
 
   gsap.registerPlugin(ScrollToPlugin);
   return (
@@ -33,9 +43,9 @@ const About = () => {
           Building <strong>iconic</strong> web3 startups <br /> that{" "}
           <strong>shape our future</strong>
         </p>
-        <button onClick={() => setOpenAbout(true)} className="cta-btn">
+        <a href="#about" onClick={() => setOpenAbout(true)} className="cta-btn">
           <BsArrowRight /> About Nuclio Labs
-        </button>
+        </a>
       </div>
       <img
         onClick={() => {

@@ -24,9 +24,9 @@
   gap: 60px;
 }
 
-.team > a {
+/* .team > a {
   margin-top: 40px;
-}
+} */
 @media screen and (max-width: 990px) {
   .team {
     min-height: 100vh;
