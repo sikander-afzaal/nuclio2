@@ -107,13 +107,18 @@ const TeamDetail = ({ close, name }) => {
     });
   }, [name]);
   useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
     if (hash === "") {
       gsap.to("body", { overflow: "auto" });
       close(false);
       gsap.to(window, {
         scrollTo: "#team",
       });
-    } else return;
+    } else {
+      gsap.to(window, {
+        scrollTo: "#team",
+      });
+    }
   }, [hash]);
   return (
     <div className="team-details">
